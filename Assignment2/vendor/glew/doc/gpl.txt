@@ -155,7 +155,7 @@ Sections 1 and 2 above provided that you also do one of the following:
 The source code for a work means the preferred form of the work for
 making modifications to it.  For an executable work, complete source
 code means all the source code for all modules it contains, plus any
-associated interface definition files, plus the scripts used to
+associated interportrait definition files, plus the scripts used to
 control compilation and installation of the executable.  However, as a
 special exception, the source code distributed need not include
 anything that is normally distributed (in either source or binary
@@ -227,7 +227,7 @@ This section is intended to make thoroughly clear what is believed to
 be a consequence of the rest of this License.
 
   8. If the distribution and/or use of the Program is restricted in
-certain countries either by patents or by copyrighted interfaces, the
+certain countries either by patents or by copyrighted interportraits, the
 original copyright holder who places the Program under this License
 may add an explicit geographical distribution limitation excluding
 those countries, so that distribution is permitted only in or among

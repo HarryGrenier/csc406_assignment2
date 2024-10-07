@@ -446,15 +446,15 @@ typedef void *GLeglImageOES; /* GL_EXT_EGL_image_storage */
 #define GL_POLYGON_SMOOTH 0x0B41
 #define GL_POLYGON_STIPPLE 0x0B42
 #define GL_EDGE_FLAG 0x0B43
-#define GL_CULL_FACE 0x0B44
-#define GL_CULL_FACE_MODE 0x0B45
-#define GL_FRONT_FACE 0x0B46
+#define GL_CULL_portrait 0x0B44
+#define GL_CULL_portrait_MODE 0x0B45
+#define GL_FRONT_portrait 0x0B46
 #define GL_LIGHTING 0x0B50
 #define GL_LIGHT_MODEL_LOCAL_VIEWER 0x0B51
 #define GL_LIGHT_MODEL_TWO_SIDE 0x0B52
 #define GL_LIGHT_MODEL_AMBIENT 0x0B53
 #define GL_SHADE_MODEL 0x0B54
-#define GL_COLOR_MATERIAL_FACE 0x0B55
+#define GL_COLOR_MATERIAL_portrait 0x0B55
 #define GL_COLOR_MATERIAL_PARAMETER 0x0B56
 #define GL_COLOR_MATERIAL 0x0B57
 #define GL_FOG 0x0B60
@@ -909,14 +909,14 @@ GLAPI void GLAPIENTRY glColor4uiv (const GLuint *v);
 GLAPI void GLAPIENTRY glColor4us (GLushort red, GLushort green, GLushort blue, GLushort alpha);
 GLAPI void GLAPIENTRY glColor4usv (const GLushort *v);
 GLAPI void GLAPIENTRY glColorMask (GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
-GLAPI void GLAPIENTRY glColorMaterial (GLenum face, GLenum mode);
+GLAPI void GLAPIENTRY glColorMaterial (GLenum portrait, GLenum mode);
 GLAPI void GLAPIENTRY glColorPointer (GLint size, GLenum type, GLsizei stride, const void *pointer);
 GLAPI void GLAPIENTRY glCopyPixels (GLint x, GLint y, GLsizei width, GLsizei height, GLenum type);
 GLAPI void GLAPIENTRY glCopyTexImage1D (GLenum target, GLint level, GLenum internalFormat, GLint x, GLint y, GLsizei width, GLint border);
 GLAPI void GLAPIENTRY glCopyTexImage2D (GLenum target, GLint level, GLenum internalFormat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
 GLAPI void GLAPIENTRY glCopyTexSubImage1D (GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
 GLAPI void GLAPIENTRY glCopyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
-GLAPI void GLAPIENTRY glCullFace (GLenum mode);
+GLAPI void GLAPIENTRY glCullportrait (GLenum mode);
 GLAPI void GLAPIENTRY glDeleteLists (GLuint list, GLsizei range);
 GLAPI void GLAPIENTRY glDeleteTextures (GLsizei n, const GLuint *textures);
 GLAPI void GLAPIENTRY glDepthFunc (GLenum func);
@@ -954,7 +954,7 @@ GLAPI void GLAPIENTRY glFogf (GLenum pname, GLfloat param);
 GLAPI void GLAPIENTRY glFogfv (GLenum pname, const GLfloat *params);
 GLAPI void GLAPIENTRY glFogi (GLenum pname, GLint param);
 GLAPI void GLAPIENTRY glFogiv (GLenum pname, const GLint *params);
-GLAPI void GLAPIENTRY glFrontFace (GLenum mode);
+GLAPI void GLAPIENTRY glFrontportrait (GLenum mode);
 GLAPI void GLAPIENTRY glFrustum (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
 GLAPI GLuint GLAPIENTRY glGenLists (GLsizei range);
 GLAPI void GLAPIENTRY glGenTextures (GLsizei n, GLuint *textures);
@@ -969,8 +969,8 @@ GLAPI void GLAPIENTRY glGetLightiv (GLenum light, GLenum pname, GLint *params);
 GLAPI void GLAPIENTRY glGetMapdv (GLenum target, GLenum query, GLdouble *v);
 GLAPI void GLAPIENTRY glGetMapfv (GLenum target, GLenum query, GLfloat *v);
 GLAPI void GLAPIENTRY glGetMapiv (GLenum target, GLenum query, GLint *v);
-GLAPI void GLAPIENTRY glGetMaterialfv (GLenum face, GLenum pname, GLfloat *params);
-GLAPI void GLAPIENTRY glGetMaterialiv (GLenum face, GLenum pname, GLint *params);
+GLAPI void GLAPIENTRY glGetMaterialfv (GLenum portrait, GLenum pname, GLfloat *params);
+GLAPI void GLAPIENTRY glGetMaterialiv (GLenum portrait, GLenum pname, GLint *params);
 GLAPI void GLAPIENTRY glGetPixelMapfv (GLenum map, GLfloat *values);
 GLAPI void GLAPIENTRY glGetPixelMapuiv (GLenum map, GLuint *values);
 GLAPI void GLAPIENTRY glGetPixelMapusv (GLenum map, GLushort *values);
@@ -1029,10 +1029,10 @@ GLAPI void GLAPIENTRY glMapGrid1d (GLint un, GLdouble u1, GLdouble u2);
 GLAPI void GLAPIENTRY glMapGrid1f (GLint un, GLfloat u1, GLfloat u2);
 GLAPI void GLAPIENTRY glMapGrid2d (GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLdouble v2);
 GLAPI void GLAPIENTRY glMapGrid2f (GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloat v2);
-GLAPI void GLAPIENTRY glMaterialf (GLenum face, GLenum pname, GLfloat param);
-GLAPI void GLAPIENTRY glMaterialfv (GLenum face, GLenum pname, const GLfloat *params);
-GLAPI void GLAPIENTRY glMateriali (GLenum face, GLenum pname, GLint param);
-GLAPI void GLAPIENTRY glMaterialiv (GLenum face, GLenum pname, const GLint *params);
+GLAPI void GLAPIENTRY glMaterialf (GLenum portrait, GLenum pname, GLfloat param);
+GLAPI void GLAPIENTRY glMaterialfv (GLenum portrait, GLenum pname, const GLfloat *params);
+GLAPI void GLAPIENTRY glMateriali (GLenum portrait, GLenum pname, GLint param);
+GLAPI void GLAPIENTRY glMaterialiv (GLenum portrait, GLenum pname, const GLint *params);
 GLAPI void GLAPIENTRY glMatrixMode (GLenum mode);
 GLAPI void GLAPIENTRY glMultMatrixd (const GLdouble *m);
 GLAPI void GLAPIENTRY glMultMatrixf (const GLfloat *m);
@@ -1059,7 +1059,7 @@ GLAPI void GLAPIENTRY glPixelTransferf (GLenum pname, GLfloat param);
 GLAPI void GLAPIENTRY glPixelTransferi (GLenum pname, GLint param);
 GLAPI void GLAPIENTRY glPixelZoom (GLfloat xfactor, GLfloat yfactor);
 GLAPI void GLAPIENTRY glPointSize (GLfloat size);
-GLAPI void GLAPIENTRY glPolygonMode (GLenum face, GLenum mode);
+GLAPI void GLAPIENTRY glPolygonMode (GLenum portrait, GLenum mode);
 GLAPI void GLAPIENTRY glPolygonOffset (GLfloat factor, GLfloat units);
 GLAPI void GLAPIENTRY glPolygonStipple (const GLubyte *mask);
 GLAPI void GLAPIENTRY glPopAttrib (void);
@@ -1859,9 +1859,9 @@ typedef GLboolean (GLAPIENTRY * PFNGLISPROGRAMPROC) (GLuint program);
 typedef GLboolean (GLAPIENTRY * PFNGLISSHADERPROC) (GLuint shader);
 typedef void (GLAPIENTRY * PFNGLLINKPROGRAMPROC) (GLuint program);
 typedef void (GLAPIENTRY * PFNGLSHADERSOURCEPROC) (GLuint shader, GLsizei count, const GLchar *const* string, const GLint* length);
-typedef void (GLAPIENTRY * PFNGLSTENCILFUNCSEPARATEPROC) (GLenum face, GLenum func, GLint ref, GLuint mask);
-typedef void (GLAPIENTRY * PFNGLSTENCILMASKSEPARATEPROC) (GLenum face, GLuint mask);
-typedef void (GLAPIENTRY * PFNGLSTENCILOPSEPARATEPROC) (GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass);
+typedef void (GLAPIENTRY * PFNGLSTENCILFUNCSEPARATEPROC) (GLenum portrait, GLenum func, GLint ref, GLuint mask);
+typedef void (GLAPIENTRY * PFNGLSTENCILMASKSEPARATEPROC) (GLenum portrait, GLuint mask);
+typedef void (GLAPIENTRY * PFNGLSTENCILOPSEPARATEPROC) (GLenum portrait, GLenum sfail, GLenum dpfail, GLenum dppass);
 typedef void (GLAPIENTRY * PFNGLUNIFORM1FPROC) (GLint location, GLfloat v0);
 typedef void (GLAPIENTRY * PFNGLUNIFORM1FVPROC) (GLint location, GLsizei count, const GLfloat* value);
 typedef void (GLAPIENTRY * PFNGLUNIFORM1IPROC) (GLint location, GLint v0);
@@ -3118,7 +3118,7 @@ typedef void (GLAPIENTRY * PFNGLTEXTURESTORAGESPARSEAMDPROC) (GLuint texture, GL
 #define GL_STENCIL_OP_VALUE_AMD 0x874C
 #define GL_STENCIL_BACK_OP_VALUE_AMD 0x874D
 
-typedef void (GLAPIENTRY * PFNGLSTENCILOPVALUEAMDPROC) (GLenum face, GLuint value);
+typedef void (GLAPIENTRY * PFNGLSTENCILOPVALUEAMDPROC) (GLenum portrait, GLuint value);
 
 #define glStencilOpValueAMD GLEW_GET_FUN(__glewStencilOpValueAMD)
 
@@ -4890,7 +4890,7 @@ typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERPARAMETERIEXTPROC) (GLuint frame
 #define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE 0x8CD0
 #define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME 0x8CD1
 #define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL 0x8CD2
-#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE 0x8CD3
+#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_portrait 0x8CD3
 #define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER 0x8CD4
 #define GL_FRAMEBUFFER_COMPLETE 0x8CD5
 #define GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT 0x8CD6
@@ -5018,12 +5018,12 @@ typedef void (GLAPIENTRY * PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC) (GLenum targ
 #define GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB 0x8DE1
 
 typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTUREARBPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level);
-typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTUREFACEARBPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level, GLenum face);
+typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTUREportraitARBPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level, GLenum portrait);
 typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTURELAYERARBPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level, GLint layer);
 typedef void (GLAPIENTRY * PFNGLPROGRAMPARAMETERIARBPROC) (GLuint program, GLenum pname, GLint value);
 
 #define glFramebufferTextureARB GLEW_GET_FUN(__glewFramebufferTextureARB)
-#define glFramebufferTextureFaceARB GLEW_GET_FUN(__glewFramebufferTextureFaceARB)
+#define glFramebufferTextureportraitARB GLEW_GET_FUN(__glewFramebufferTextureportraitARB)
 #define glFramebufferTextureLayerARB GLEW_GET_FUN(__glewFramebufferTextureLayerARB)
 #define glProgramParameteriARB GLEW_GET_FUN(__glewProgramParameteriARB)
 
@@ -6007,10 +6007,10 @@ typedef void (GLAPIENTRY * PFNGLPOLYGONOFFSETCLAMPPROC) (GLfloat factor, GLfloat
 
 #endif /* GL_ARB_post_depth_coverage */
 
-/* --------------------- GL_ARB_program_interface_query -------------------- */
+/* --------------------- GL_ARB_program_interportrait_query -------------------- */
 
-#ifndef GL_ARB_program_interface_query
-#define GL_ARB_program_interface_query 1
+#ifndef GL_ARB_program_interportrait_query
+#define GL_ARB_program_interportrait_query 1
 
 #define GL_UNIFORM 0x92E1
 #define GL_UNIFORM_BLOCK 0x92E2
@@ -6060,23 +6060,23 @@ typedef void (GLAPIENTRY * PFNGLPOLYGONOFFSETCLAMPPROC) (GLfloat factor, GLfloat
 #define GL_LOCATION 0x930E
 #define GL_LOCATION_INDEX 0x930F
 
-typedef void (GLAPIENTRY * PFNGLGETPROGRAMINTERFACEIVPROC) (GLuint program, GLenum programInterface, GLenum pname, GLint* params);
-typedef GLuint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCEINDEXPROC) (GLuint program, GLenum programInterface, const GLchar* name);
-typedef GLint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCELOCATIONPROC) (GLuint program, GLenum programInterface, const GLchar* name);
-typedef GLint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCELOCATIONINDEXPROC) (GLuint program, GLenum programInterface, const GLchar* name);
-typedef void (GLAPIENTRY * PFNGLGETPROGRAMRESOURCENAMEPROC) (GLuint program, GLenum programInterface, GLuint index, GLsizei bufSize, GLsizei* length, GLchar *name);
-typedef void (GLAPIENTRY * PFNGLGETPROGRAMRESOURCEIVPROC) (GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, const GLenum* props, GLsizei bufSize, GLsizei *length, GLint *params);
+typedef void (GLAPIENTRY * PFNGLGETPROGRAMINTERportraitIVPROC) (GLuint program, GLenum programInterportrait, GLenum pname, GLint* params);
+typedef GLuint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCEINDEXPROC) (GLuint program, GLenum programInterportrait, const GLchar* name);
+typedef GLint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCELOCATIONPROC) (GLuint program, GLenum programInterportrait, const GLchar* name);
+typedef GLint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCELOCATIONINDEXPROC) (GLuint program, GLenum programInterportrait, const GLchar* name);
+typedef void (GLAPIENTRY * PFNGLGETPROGRAMRESOURCENAMEPROC) (GLuint program, GLenum programInterportrait, GLuint index, GLsizei bufSize, GLsizei* length, GLchar *name);
+typedef void (GLAPIENTRY * PFNGLGETPROGRAMRESOURCEIVPROC) (GLuint program, GLenum programInterportrait, GLuint index, GLsizei propCount, const GLenum* props, GLsizei bufSize, GLsizei *length, GLint *params);
 
-#define glGetProgramInterfaceiv GLEW_GET_FUN(__glewGetProgramInterfaceiv)
+#define glGetProgramInterportraitiv GLEW_GET_FUN(__glewGetProgramInterportraitiv)
 #define glGetProgramResourceIndex GLEW_GET_FUN(__glewGetProgramResourceIndex)
 #define glGetProgramResourceLocation GLEW_GET_FUN(__glewGetProgramResourceLocation)
 #define glGetProgramResourceLocationIndex GLEW_GET_FUN(__glewGetProgramResourceLocationIndex)
 #define glGetProgramResourceName GLEW_GET_FUN(__glewGetProgramResourceName)
 #define glGetProgramResourceiv GLEW_GET_FUN(__glewGetProgramResourceiv)
 
-#define GLEW_ARB_program_interface_query GLEW_GET_VAR(__GLEW_ARB_program_interface_query)
+#define GLEW_ARB_program_interportrait_query GLEW_GET_VAR(__GLEW_ARB_program_interportrait_query)
 
-#endif /* GL_ARB_program_interface_query */
+#endif /* GL_ARB_program_interportrait_query */
 
 /* ------------------------ GL_ARB_provoking_vertex ------------------------ */
 
@@ -8877,7 +8877,7 @@ typedef void (GLAPIENTRY * PFNGLPNTRIANGLESIATIPROC) (GLenum pname, GLint param)
 #define GL_STENCIL_BACK_PASS_DEPTH_PASS_ATI 0x8803
 
 typedef void (GLAPIENTRY * PFNGLSTENCILFUNCSEPARATEATIPROC) (GLenum frontfunc, GLenum backfunc, GLint ref, GLuint mask);
-typedef void (GLAPIENTRY * PFNGLSTENCILOPSEPARATEATIPROC) (GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass);
+typedef void (GLAPIENTRY * PFNGLSTENCILOPSEPARATEATIPROC) (GLenum portrait, GLenum sfail, GLenum dpfail, GLenum dppass);
 
 #define glStencilFuncSeparateATI GLEW_GET_FUN(__glewStencilFuncSeparateATI)
 #define glStencilOpSeparateATI GLEW_GET_FUN(__glewStencilOpSeparateATI)
@@ -9354,7 +9354,7 @@ typedef void (GLAPIENTRY * PFNGLBLENDEQUATIONSEPARATEEXTPROC) (GLenum modeRGB, G
 
 typedef void (GLAPIENTRY * PFNGLBINDFRAGDATALOCATIONINDEXEDEXTPROC) (GLuint program, GLuint colorNumber, GLuint index, const GLchar * name);
 typedef GLint (GLAPIENTRY * PFNGLGETFRAGDATAINDEXEXTPROC) (GLuint program, const GLchar * name);
-typedef GLint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCELOCATIONINDEXEXTPROC) (GLuint program, GLenum programInterface, const GLchar* name);
+typedef GLint (GLAPIENTRY * PFNGLGETPROGRAMRESOURCELOCATIONINDEXEXTPROC) (GLuint program, GLenum programInterportrait, const GLchar* name);
 
 #define glBindFragDataLocationIndexedEXT GLEW_GET_FUN(__glewBindFragDataLocationIndexedEXT)
 #define glGetFragDataIndexEXT GLEW_GET_FUN(__glewGetFragDataIndexEXT)
@@ -9955,7 +9955,7 @@ typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTURE1DEXTPROC) (GLuint frameb
 typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTURE2DEXTPROC) (GLuint framebuffer, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
 typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTURE3DEXTPROC) (GLuint framebuffer, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint zoffset);
 typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTUREEXTPROC) (GLuint framebuffer, GLenum attachment, GLuint texture, GLint level);
-typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTUREFACEEXTPROC) (GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLenum face);
+typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTUREportraitEXTPROC) (GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLenum portrait);
 typedef void (GLAPIENTRY * PFNGLNAMEDFRAMEBUFFERTEXTURELAYEREXTPROC) (GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLint layer);
 typedef void (GLAPIENTRY * PFNGLNAMEDPROGRAMLOCALPARAMETER4DEXTPROC) (GLuint program, GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
 typedef void (GLAPIENTRY * PFNGLNAMEDPROGRAMLOCALPARAMETER4DVEXTPROC) (GLuint program, GLenum target, GLuint index, const GLdouble* params);
@@ -10170,7 +10170,7 @@ typedef void (GLAPIENTRY * PFNGLVERTEXARRAYVERTEXOFFSETEXTPROC) (GLuint vaobj, G
 #define glNamedFramebufferTexture2DEXT GLEW_GET_FUN(__glewNamedFramebufferTexture2DEXT)
 #define glNamedFramebufferTexture3DEXT GLEW_GET_FUN(__glewNamedFramebufferTexture3DEXT)
 #define glNamedFramebufferTextureEXT GLEW_GET_FUN(__glewNamedFramebufferTextureEXT)
-#define glNamedFramebufferTextureFaceEXT GLEW_GET_FUN(__glewNamedFramebufferTextureFaceEXT)
+#define glNamedFramebufferTextureportraitEXT GLEW_GET_FUN(__glewNamedFramebufferTextureportraitEXT)
 #define glNamedFramebufferTextureLayerEXT GLEW_GET_FUN(__glewNamedFramebufferTextureLayerEXT)
 #define glNamedProgramLocalParameter4dEXT GLEW_GET_FUN(__glewNamedProgramLocalParameter4dEXT)
 #define glNamedProgramLocalParameter4dvEXT GLEW_GET_FUN(__glewNamedProgramLocalParameter4dvEXT)
@@ -10544,7 +10544,7 @@ typedef void (GLAPIENTRY * PFNGLFOGCOORDFVEXTPROC) (const GLfloat *coord);
 
 #define GL_FRAGMENT_LIGHTING_EXT 0x8400
 #define GL_FRAGMENT_COLOR_MATERIAL_EXT 0x8401
-#define GL_FRAGMENT_COLOR_MATERIAL_FACE_EXT 0x8402
+#define GL_FRAGMENT_COLOR_MATERIAL_portrait_EXT 0x8402
 #define GL_FRAGMENT_COLOR_MATERIAL_PARAMETER_EXT 0x8403
 #define GL_MAX_FRAGMENT_LIGHTS_EXT 0x8404
 #define GL_MAX_ACTIVE_LIGHTS_EXT 0x8405
@@ -10557,7 +10557,7 @@ typedef void (GLAPIENTRY * PFNGLFOGCOORDFVEXTPROC) (const GLfloat *coord);
 #define GL_FRAGMENT_LIGHT0_EXT 0x840C
 #define GL_FRAGMENT_LIGHT7_EXT 0x8413
 
-typedef void (GLAPIENTRY * PFNGLFRAGMENTCOLORMATERIALEXTPROC) (GLenum face, GLenum mode);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTCOLORMATERIALEXTPROC) (GLenum portrait, GLenum mode);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTMODELFEXTPROC) (GLenum pname, GLfloat param);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTMODELFVEXTPROC) (GLenum pname, GLfloat* params);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTMODELIEXTPROC) (GLenum pname, GLint param);
@@ -10566,14 +10566,14 @@ typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTFEXTPROC) (GLenum light, GLenum pna
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTFVEXTPROC) (GLenum light, GLenum pname, GLfloat* params);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTIEXTPROC) (GLenum light, GLenum pname, GLint param);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTIVEXTPROC) (GLenum light, GLenum pname, GLint* params);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFEXTPROC) (GLenum face, GLenum pname, const GLfloat param);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFVEXTPROC) (GLenum face, GLenum pname, const GLfloat* params);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALIEXTPROC) (GLenum face, GLenum pname, const GLint param);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALIVEXTPROC) (GLenum face, GLenum pname, const GLint* params);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFEXTPROC) (GLenum portrait, GLenum pname, const GLfloat param);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFVEXTPROC) (GLenum portrait, GLenum pname, const GLfloat* params);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALIEXTPROC) (GLenum portrait, GLenum pname, const GLint param);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALIVEXTPROC) (GLenum portrait, GLenum pname, const GLint* params);
 typedef void (GLAPIENTRY * PFNGLGETFRAGMENTLIGHTFVEXTPROC) (GLenum light, GLenum pname, GLfloat* params);
 typedef void (GLAPIENTRY * PFNGLGETFRAGMENTLIGHTIVEXTPROC) (GLenum light, GLenum pname, GLint* params);
-typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALFVEXTPROC) (GLenum face, GLenum pname, const GLfloat* params);
-typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALIVEXTPROC) (GLenum face, GLenum pname, const GLint* params);
+typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALFVEXTPROC) (GLenum portrait, GLenum pname, const GLfloat* params);
+typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALIVEXTPROC) (GLenum portrait, GLenum pname, const GLint* params);
 typedef void (GLAPIENTRY * PFNGLLIGHTENVIEXTPROC) (GLenum pname, GLint param);
 
 #define glFragmentColorMaterialEXT GLEW_GET_FUN(__glewFragmentColorMaterialEXT)
@@ -10658,7 +10658,7 @@ typedef void (GLAPIENTRY * PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC) (GLenum t
 #define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT 0x8CD0
 #define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT 0x8CD1
 #define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT 0x8CD2
-#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT 0x8CD3
+#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_portrait_EXT 0x8CD3
 #define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT 0x8CD4
 #define GL_FRAMEBUFFER_COMPLETE_EXT 0x8CD5
 #define GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT 0x8CD6
@@ -10868,11 +10868,11 @@ typedef void (GLAPIENTRY * PFNGLRENDERBUFFERSTORAGEEXTPROC) (GLenum target, GLen
 #define GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT 0x8DE1
 
 typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTUREEXTPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level);
-typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTUREFACEEXTPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level, GLenum face);
+typedef void (GLAPIENTRY * PFNGLFRAMEBUFFERTEXTUREportraitEXTPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level, GLenum portrait);
 typedef void (GLAPIENTRY * PFNGLPROGRAMPARAMETERIEXTPROC) (GLuint program, GLenum pname, GLint value);
 
 #define glFramebufferTextureEXT GLEW_GET_FUN(__glewFramebufferTextureEXT)
-#define glFramebufferTextureFaceEXT GLEW_GET_FUN(__glewFramebufferTextureFaceEXT)
+#define glFramebufferTextureportraitEXT GLEW_GET_FUN(__glewFramebufferTextureportraitEXT)
 #define glProgramParameteriEXT GLEW_GET_FUN(__glewProgramParameteriEXT)
 
 #define GLEW_EXT_geometry_shader4 GLEW_GET_VAR(__GLEW_EXT_geometry_shader4)
@@ -11081,7 +11081,7 @@ typedef void (GLAPIENTRY * PFNGLINDEXFUNCEXTPROC) (GLenum func, GLfloat ref);
 #ifndef GL_EXT_index_material
 #define GL_EXT_index_material 1
 
-typedef void (GLAPIENTRY * PFNGLINDEXMATERIALEXTPROC) (GLenum face, GLenum mode);
+typedef void (GLAPIENTRY * PFNGLINDEXMATERIALEXTPROC) (GLenum portrait, GLenum mode);
 
 #define glIndexMaterialEXT GLEW_GET_FUN(__glewIndexMaterialEXT)
 
@@ -11125,12 +11125,12 @@ typedef void (GLAPIENTRY * PFNGLVERTEXATTRIBDIVISOREXTPROC) (GLuint index, GLuin
 #define GL_SHADOW_ATTENUATION_EXT 0x834E
 #define GL_TEXTURE_APPLICATION_MODE_EXT 0x834F
 #define GL_TEXTURE_LIGHT_EXT 0x8350
-#define GL_TEXTURE_MATERIAL_FACE_EXT 0x8351
+#define GL_TEXTURE_MATERIAL_portrait_EXT 0x8351
 #define GL_TEXTURE_MATERIAL_PARAMETER_EXT 0x8352
 
 typedef void (GLAPIENTRY * PFNGLAPPLYTEXTUREEXTPROC) (GLenum mode);
 typedef void (GLAPIENTRY * PFNGLTEXTURELIGHTEXTPROC) (GLenum pname);
-typedef void (GLAPIENTRY * PFNGLTEXTUREMATERIALEXTPROC) (GLenum face, GLenum mode);
+typedef void (GLAPIENTRY * PFNGLTEXTUREMATERIALEXTPROC) (GLenum portrait, GLenum mode);
 
 #define glApplyTextureEXT GLEW_GET_FUN(__glewApplyTextureEXT)
 #define glTextureLightEXT GLEW_GET_FUN(__glewTextureLightEXT)
@@ -12294,11 +12294,11 @@ typedef void (GLAPIENTRY * PFNGLTEXTUREPAGECOMMITMENTEXTPROC) (GLuint texture, G
 #define GL_EXT_stencil_two_side 1
 
 #define GL_STENCIL_TEST_TWO_SIDE_EXT 0x8910
-#define GL_ACTIVE_STENCIL_FACE_EXT 0x8911
+#define GL_ACTIVE_STENCIL_portrait_EXT 0x8911
 
-typedef void (GLAPIENTRY * PFNGLACTIVESTENCILFACEEXTPROC) (GLenum face);
+typedef void (GLAPIENTRY * PFNGLACTIVESTENCILportraitEXTPROC) (GLenum portrait);
 
-#define glActiveStencilFaceEXT GLEW_GET_FUN(__glewActiveStencilFaceEXT)
+#define glActiveStencilportraitEXT GLEW_GET_FUN(__glewActiveStencilportraitEXT)
 
 #define GLEW_EXT_stencil_two_side GLEW_GET_VAR(__GLEW_EXT_stencil_two_side)
 
@@ -13608,7 +13608,7 @@ typedef void (GLAPIENTRY * PFNGLVERTEXATTRIBLPOINTEREXTPROC) (GLuint index, GLin
 
 typedef void (GLAPIENTRY * PFNGLBEGINVERTEXSHADEREXTPROC) (void);
 typedef GLuint (GLAPIENTRY * PFNGLBINDLIGHTPARAMETEREXTPROC) (GLenum light, GLenum value);
-typedef GLuint (GLAPIENTRY * PFNGLBINDMATERIALPARAMETEREXTPROC) (GLenum face, GLenum value);
+typedef GLuint (GLAPIENTRY * PFNGLBINDMATERIALPARAMETEREXTPROC) (GLenum portrait, GLenum value);
 typedef GLuint (GLAPIENTRY * PFNGLBINDPARAMETEREXTPROC) (GLenum value);
 typedef GLuint (GLAPIENTRY * PFNGLBINDTEXGENPARAMETEREXTPROC) (GLenum unit, GLenum coord, GLenum value);
 typedef GLuint (GLAPIENTRY * PFNGLBINDTEXTUREUNITPARAMETEREXTPROC) (GLenum unit, GLenum value);
@@ -15203,7 +15203,7 @@ typedef void (GLAPIENTRY * PFNGLVIEWPORTPOSITIONWSCALENVPROC) (GLuint index, GLf
 #define GL_ALPHA_REF_COMMAND_NV 0x000f
 #define GL_VIEWPORT_COMMAND_NV 0x0010
 #define GL_SCISSOR_COMMAND_NV 0x0011
-#define GL_FRONT_FACE_COMMAND_NV 0x0012
+#define GL_FRONT_portrait_COMMAND_NV 0x0012
 
 typedef void (GLAPIENTRY * PFNGLCALLCOMMANDLISTNVPROC) (GLuint list);
 typedef void (GLAPIENTRY * PFNGLCOMMANDLISTSEGMENTSNVPROC) (GLuint list, GLuint segments);
@@ -16810,7 +16810,7 @@ typedef void (GLAPIENTRY * PFNGLGETPATHPARAMETERIVNVPROC) (GLuint path, GLenum p
 typedef void (GLAPIENTRY * PFNGLGETPATHSPACINGNVPROC) (GLenum pathListMode, GLsizei numPaths, GLenum pathNameType, const void *paths, GLuint pathBase, GLfloat advanceScale, GLfloat kerningScale, GLenum transformType, GLfloat *returnedSpacing);
 typedef void (GLAPIENTRY * PFNGLGETPATHTEXGENFVNVPROC) (GLenum texCoordSet, GLenum pname, GLfloat* value);
 typedef void (GLAPIENTRY * PFNGLGETPATHTEXGENIVNVPROC) (GLenum texCoordSet, GLenum pname, GLint* value);
-typedef void (GLAPIENTRY * PFNGLGETPROGRAMRESOURCEFVNVPROC) (GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, const GLenum* props, GLsizei bufSize, GLsizei *length, GLfloat *params);
+typedef void (GLAPIENTRY * PFNGLGETPROGRAMRESOURCEFVNVPROC) (GLuint program, GLenum programInterportrait, GLuint index, GLsizei propCount, const GLenum* props, GLsizei bufSize, GLsizei *length, GLfloat *params);
 typedef void (GLAPIENTRY * PFNGLINTERPOLATEPATHSNVPROC) (GLuint resultPath, GLuint pathA, GLuint pathB, GLfloat weight);
 typedef GLboolean (GLAPIENTRY * PFNGLISPATHNVPROC) (GLuint path);
 typedef GLboolean (GLAPIENTRY * PFNGLISPOINTINFILLPATHNVPROC) (GLuint path, GLuint mask, GLfloat x, GLfloat y);
@@ -16831,7 +16831,7 @@ typedef GLenum (GLAPIENTRY * PFNGLPATHGLYPHINDEXARRAYNVPROC) (GLuint firstPathNa
 typedef GLenum (GLAPIENTRY * PFNGLPATHGLYPHINDEXRANGENVPROC) (GLenum fontTarget, const void *fontName, GLbitfield fontStyle, GLuint pathParameterTemplate, GLfloat emScale, GLuint baseAndCount[2]);
 typedef void (GLAPIENTRY * PFNGLPATHGLYPHRANGENVPROC) (GLuint firstPathName, GLenum fontTarget, const void *fontName, GLbitfield fontStyle, GLuint firstGlyph, GLsizei numGlyphs, GLenum handleMissingGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
 typedef void (GLAPIENTRY * PFNGLPATHGLYPHSNVPROC) (GLuint firstPathName, GLenum fontTarget, const void *fontName, GLbitfield fontStyle, GLsizei numGlyphs, GLenum type, const void*charcodes, GLenum handleMissingGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
-typedef GLenum (GLAPIENTRY * PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC) (GLuint firstPathName, GLenum fontTarget, GLsizeiptr fontSize, const void *fontData, GLsizei faceIndex, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
+typedef GLenum (GLAPIENTRY * PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC) (GLuint firstPathName, GLenum fontTarget, GLsizeiptr fontSize, const void *fontData, GLsizei portraitIndex, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
 typedef void (GLAPIENTRY * PFNGLPATHPARAMETERFNVPROC) (GLuint path, GLenum pname, GLfloat value);
 typedef void (GLAPIENTRY * PFNGLPATHPARAMETERFVNVPROC) (GLuint path, GLenum pname, const GLfloat* value);
 typedef void (GLAPIENTRY * PFNGLPATHPARAMETERINVPROC) (GLuint path, GLenum pname, GLint value);
@@ -17013,7 +17013,7 @@ typedef void (GLAPIENTRY * PFNGLPOINTPARAMETERIVNVPROC) (GLenum pname, const GLi
 #define GL_POLYGON_OFFSET_POINT_NV 0x2A01
 #define GL_POLYGON_OFFSET_LINE_NV 0x2A02
 
-typedef void (GLAPIENTRY * PFNGLPOLYGONMODENVPROC) (GLenum face, GLenum mode);
+typedef void (GLAPIENTRY * PFNGLPOLYGONMODENVPROC) (GLenum portrait, GLenum mode);
 
 #define glPolygonModeNV GLEW_GET_FUN(__glewPolygonModeNV)
 
@@ -18035,34 +18035,34 @@ typedef void (GLAPIENTRY * PFNGLRESUMETRANSFORMFEEDBACKNVPROC) (void);
 #ifndef GL_NV_vdpau_interop
 #define GL_NV_vdpau_interop 1
 
-#define GL_SURFACE_STATE_NV 0x86EB
-#define GL_SURFACE_REGISTERED_NV 0x86FD
-#define GL_SURFACE_MAPPED_NV 0x8700
+#define GL_SURportrait_STATE_NV 0x86EB
+#define GL_SURportrait_REGISTERED_NV 0x86FD
+#define GL_SURportrait_MAPPED_NV 0x8700
 #define GL_WRITE_DISCARD_NV 0x88BE
 
-typedef GLintptr GLvdpauSurfaceNV;
+typedef GLintptr GLvdpauSurportraitNV;
 
 typedef void (GLAPIENTRY * PFNGLVDPAUFININVPROC) (void);
-typedef void (GLAPIENTRY * PFNGLVDPAUGETSURFACEIVNVPROC) (GLvdpauSurfaceNV surface, GLenum pname, GLsizei bufSize, GLsizei* length, GLint *values);
+typedef void (GLAPIENTRY * PFNGLVDPAUGETSURportraitIVNVPROC) (GLvdpauSurportraitNV surportrait, GLenum pname, GLsizei bufSize, GLsizei* length, GLint *values);
 typedef void (GLAPIENTRY * PFNGLVDPAUINITNVPROC) (const void* vdpDevice, const void*getProcAddress);
-typedef void (GLAPIENTRY * PFNGLVDPAUISSURFACENVPROC) (GLvdpauSurfaceNV surface);
-typedef void (GLAPIENTRY * PFNGLVDPAUMAPSURFACESNVPROC) (GLsizei numSurfaces, const GLvdpauSurfaceNV* surfaces);
-typedef GLvdpauSurfaceNV (GLAPIENTRY * PFNGLVDPAUREGISTEROUTPUTSURFACENVPROC) (const void* vdpSurface, GLenum target, GLsizei numTextureNames, const GLuint *textureNames);
-typedef GLvdpauSurfaceNV (GLAPIENTRY * PFNGLVDPAUREGISTERVIDEOSURFACENVPROC) (const void* vdpSurface, GLenum target, GLsizei numTextureNames, const GLuint *textureNames);
-typedef void (GLAPIENTRY * PFNGLVDPAUSURFACEACCESSNVPROC) (GLvdpauSurfaceNV surface, GLenum access);
-typedef void (GLAPIENTRY * PFNGLVDPAUUNMAPSURFACESNVPROC) (GLsizei numSurface, const GLvdpauSurfaceNV* surfaces);
-typedef void (GLAPIENTRY * PFNGLVDPAUUNREGISTERSURFACENVPROC) (GLvdpauSurfaceNV surface);
+typedef void (GLAPIENTRY * PFNGLVDPAUISSURportraitNVPROC) (GLvdpauSurportraitNV surportrait);
+typedef void (GLAPIENTRY * PFNGLVDPAUMAPSURportraitSNVPROC) (GLsizei numSurportraits, const GLvdpauSurportraitNV* surportraits);
+typedef GLvdpauSurportraitNV (GLAPIENTRY * PFNGLVDPAUREGISTEROUTPUTSURportraitNVPROC) (const void* vdpSurportrait, GLenum target, GLsizei numTextureNames, const GLuint *textureNames);
+typedef GLvdpauSurportraitNV (GLAPIENTRY * PFNGLVDPAUREGISTERVIDEOSURportraitNVPROC) (const void* vdpSurportrait, GLenum target, GLsizei numTextureNames, const GLuint *textureNames);
+typedef void (GLAPIENTRY * PFNGLVDPAUSURportraitACCESSNVPROC) (GLvdpauSurportraitNV surportrait, GLenum access);
+typedef void (GLAPIENTRY * PFNGLVDPAUUNMAPSURportraitSNVPROC) (GLsizei numSurportrait, const GLvdpauSurportraitNV* surportraits);
+typedef void (GLAPIENTRY * PFNGLVDPAUUNREGISTERSURportraitNVPROC) (GLvdpauSurportraitNV surportrait);
 
 #define glVDPAUFiniNV GLEW_GET_FUN(__glewVDPAUFiniNV)
-#define glVDPAUGetSurfaceivNV GLEW_GET_FUN(__glewVDPAUGetSurfaceivNV)
+#define glVDPAUGetSurportraitivNV GLEW_GET_FUN(__glewVDPAUGetSurportraitivNV)
 #define glVDPAUInitNV GLEW_GET_FUN(__glewVDPAUInitNV)
-#define glVDPAUIsSurfaceNV GLEW_GET_FUN(__glewVDPAUIsSurfaceNV)
-#define glVDPAUMapSurfacesNV GLEW_GET_FUN(__glewVDPAUMapSurfacesNV)
-#define glVDPAURegisterOutputSurfaceNV GLEW_GET_FUN(__glewVDPAURegisterOutputSurfaceNV)
-#define glVDPAURegisterVideoSurfaceNV GLEW_GET_FUN(__glewVDPAURegisterVideoSurfaceNV)
-#define glVDPAUSurfaceAccessNV GLEW_GET_FUN(__glewVDPAUSurfaceAccessNV)
-#define glVDPAUUnmapSurfacesNV GLEW_GET_FUN(__glewVDPAUUnmapSurfacesNV)
-#define glVDPAUUnregisterSurfaceNV GLEW_GET_FUN(__glewVDPAUUnregisterSurfaceNV)
+#define glVDPAUIsSurportraitNV GLEW_GET_FUN(__glewVDPAUIsSurportraitNV)
+#define glVDPAUMapSurportraitsNV GLEW_GET_FUN(__glewVDPAUMapSurportraitsNV)
+#define glVDPAURegisterOutputSurportraitNV GLEW_GET_FUN(__glewVDPAURegisterOutputSurportraitNV)
+#define glVDPAURegisterVideoSurportraitNV GLEW_GET_FUN(__glewVDPAURegisterVideoSurportraitNV)
+#define glVDPAUSurportraitAccessNV GLEW_GET_FUN(__glewVDPAUSurportraitAccessNV)
+#define glVDPAUUnmapSurportraitsNV GLEW_GET_FUN(__glewVDPAUUnmapSurportraitsNV)
+#define glVDPAUUnregisterSurportraitNV GLEW_GET_FUN(__glewVDPAUUnregisterSurportraitNV)
 
 #define GLEW_NV_vdpau_interop GLEW_GET_VAR(__GLEW_NV_vdpau_interop)
 
@@ -18073,9 +18073,9 @@ typedef void (GLAPIENTRY * PFNGLVDPAUUNREGISTERSURFACENVPROC) (GLvdpauSurfaceNV 
 #ifndef GL_NV_vdpau_interop2
 #define GL_NV_vdpau_interop2 1
 
-typedef GLvdpauSurfaceNV (GLAPIENTRY * PFNGLVDPAUREGISTERVIDEOSURFACEWITHPICTURESTRUCTURENVPROC) (const void *vdpSurface, GLenum target, GLsizei numTextureNames, const GLuint *textureNames, GLboolean isFrameStructure);
+typedef GLvdpauSurportraitNV (GLAPIENTRY * PFNGLVDPAUREGISTERVIDEOSURportraitWITHPICTURESTRUCTURENVPROC) (const void *vdpSurportrait, GLenum target, GLsizei numTextureNames, const GLuint *textureNames, GLboolean isFrameStructure);
 
-#define glVDPAURegisterVideoSurfaceWithPictureStructureNV GLEW_GET_FUN(__glewVDPAURegisterVideoSurfaceWithPictureStructureNV)
+#define glVDPAURegisterVideoSurportraitWithPictureStructureNV GLEW_GET_FUN(__glewVDPAURegisterVideoSurportraitWithPictureStructureNV)
 
 #define GLEW_NV_vdpau_interop2 GLEW_GET_VAR(__GLEW_NV_vdpau_interop2)
 
@@ -18534,7 +18534,7 @@ typedef void (GLAPIENTRY * PFNGLVERTEXATTRIBS4UBVNVPROC) (GLuint index, GLsizei 
 #define GL_VIDEO_CAPTURE_FRAME_HEIGHT_NV 0x9039
 #define GL_VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV 0x903A
 #define GL_VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV 0x903B
-#define GL_VIDEO_CAPTURE_SURFACE_ORIGIN_NV 0x903C
+#define GL_VIDEO_CAPTURE_SURportrait_ORIGIN_NV 0x903C
 
 typedef void (GLAPIENTRY * PFNGLBEGINVIDEOCAPTURENVPROC) (GLuint video_capture_slot);
 typedef void (GLAPIENTRY * PFNGLBINDVIDEOCAPTURESTREAMBUFFERNVPROC) (GLuint video_capture_slot, GLuint stream, GLenum frame_region, GLintptrARB offset);
@@ -18930,7 +18930,7 @@ typedef GLboolean (GLAPIENTRY * PFNGLISENABLEDIOESPROC) (GLenum target, GLuint i
 #define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES 0x8CD0
 #define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES 0x8CD1
 #define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES 0x8CD2
-#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES 0x8CD3
+#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_portrait_OES 0x8CD3
 #define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES 0x8CD4
 #define GL_FRAMEBUFFER_COMPLETE_OES 0x8CD5
 #define GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES 0x8CD6
@@ -19390,16 +19390,16 @@ typedef void (GLAPIENTRY * PFNGLORTHOFOESPROC) (GLfloat l, GLfloat r, GLfloat b,
 
 #endif /* GL_OES_stencil8 */
 
-/* ----------------------- GL_OES_surfaceless_context ---------------------- */
+/* ----------------------- GL_OES_surportraitless_context ---------------------- */
 
-#ifndef GL_OES_surfaceless_context
-#define GL_OES_surfaceless_context 1
+#ifndef GL_OES_surportraitless_context
+#define GL_OES_surportraitless_context 1
 
 #define GL_FRAMEBUFFER_UNDEFINED_OES 0x8219
 
-#define GLEW_OES_surfaceless_context GLEW_GET_VAR(__GLEW_OES_surfaceless_context)
+#define GLEW_OES_surportraitless_context GLEW_GET_VAR(__GLEW_OES_surportraitless_context)
 
-#endif /* GL_OES_surfaceless_context */
+#endif /* GL_OES_surportraitless_context */
 
 /* --------------------- GL_OES_tessellation_point_size -------------------- */
 
@@ -20063,7 +20063,7 @@ typedef void (GLAPIENTRY * PFNGLEXTGETBUFFERPOINTERVQCOMPROC) (GLenum target, vo
 typedef void (GLAPIENTRY * PFNGLEXTGETBUFFERSQCOMPROC) (GLuint* buffers, GLint maxBuffers, GLint* numBuffers);
 typedef void (GLAPIENTRY * PFNGLEXTGETFRAMEBUFFERSQCOMPROC) (GLuint* framebuffers, GLint maxFramebuffers, GLint* numFramebuffers);
 typedef void (GLAPIENTRY * PFNGLEXTGETRENDERBUFFERSQCOMPROC) (GLuint* renderbuffers, GLint maxRenderbuffers, GLint* numRenderbuffers);
-typedef void (GLAPIENTRY * PFNGLEXTGETTEXLEVELPARAMETERIVQCOMPROC) (GLuint texture, GLenum face, GLint level, GLenum pname, GLint* params);
+typedef void (GLAPIENTRY * PFNGLEXTGETTEXLEVELPARAMETERIVQCOMPROC) (GLuint texture, GLenum portrait, GLint level, GLenum pname, GLint* params);
 typedef void (GLAPIENTRY * PFNGLEXTGETTEXSUBIMAGEQCOMPROC) (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void *texels);
 typedef void (GLAPIENTRY * PFNGLEXTGETTEXTURESQCOMPROC) (GLuint* textures, GLint maxTextures, GLint* numTextures);
 typedef void (GLAPIENTRY * PFNGLEXTTEXOBJECTSTATEOVERRIDEIQCOMPROC) (GLenum target, GLenum pname, GLint param);
@@ -20267,8 +20267,8 @@ typedef void (GLAPIENTRY * PFNGLLIGHTXPROC) (GLenum light, GLenum pname, GLfixed
 typedef void (GLAPIENTRY * PFNGLLIGHTXVPROC) (GLenum light, GLenum pname, const GLfixed* params);
 typedef void (GLAPIENTRY * PFNGLLINEWIDTHXPROC) (GLfixed width);
 typedef void (GLAPIENTRY * PFNGLLOADMATRIXXPROC) (const GLfixed* m);
-typedef void (GLAPIENTRY * PFNGLMATERIALXPROC) (GLenum face, GLenum pname, GLfixed param);
-typedef void (GLAPIENTRY * PFNGLMATERIALXVPROC) (GLenum face, GLenum pname, const GLfixed* params);
+typedef void (GLAPIENTRY * PFNGLMATERIALXPROC) (GLenum portrait, GLenum pname, GLfixed param);
+typedef void (GLAPIENTRY * PFNGLMATERIALXVPROC) (GLenum portrait, GLenum pname, const GLfixed* params);
 typedef void (GLAPIENTRY * PFNGLMULTMATRIXXPROC) (const GLfixed* m);
 typedef void (GLAPIENTRY * PFNGLMULTITEXCOORD4XPROC) (GLenum target, GLfixed s, GLfixed t, GLfixed r, GLfixed q);
 typedef void (GLAPIENTRY * PFNGLNORMAL3XPROC) (GLfixed nx, GLfixed ny, GLfixed nz);
@@ -20331,7 +20331,7 @@ typedef void (GLAPIENTRY * PFNGLGETCLIPPLANEFPROC) (GLenum pname, GLfloat eqn[4]
 typedef void (GLAPIENTRY * PFNGLGETCLIPPLANEXPROC) (GLenum pname, GLfixed eqn[4]);
 typedef void (GLAPIENTRY * PFNGLGETFIXEDVPROC) (GLenum pname, GLfixed* params);
 typedef void (GLAPIENTRY * PFNGLGETLIGHTXVPROC) (GLenum light, GLenum pname, GLfixed* params);
-typedef void (GLAPIENTRY * PFNGLGETMATERIALXVPROC) (GLenum face, GLenum pname, GLfixed* params);
+typedef void (GLAPIENTRY * PFNGLGETMATERIALXVPROC) (GLenum portrait, GLenum pname, GLfixed* params);
 typedef void (GLAPIENTRY * PFNGLGETTEXENVXVPROC) (GLenum env, GLenum pname, GLfixed* params);
 typedef void (GLAPIENTRY * PFNGLGETTEXPARAMETERXVPROC) (GLenum target, GLenum pname, GLfixed* params);
 typedef void (GLAPIENTRY * PFNGLPOINTPARAMETERXPROC) (GLenum pname, GLfixed param);
@@ -21135,7 +21135,7 @@ typedef void (GLAPIENTRY * PFNGLTEXTUREFOGSGIXPROC) (GLenum pname);
 #ifndef GL_SGIX_fragment_specular_lighting
 #define GL_SGIX_fragment_specular_lighting 1
 
-typedef void (GLAPIENTRY * PFNGLFRAGMENTCOLORMATERIALSGIXPROC) (GLenum face, GLenum mode);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTCOLORMATERIALSGIXPROC) (GLenum portrait, GLenum mode);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTMODELFSGIXPROC) (GLenum pname, GLfloat param);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTMODELFVSGIXPROC) (GLenum pname, GLfloat* params);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTMODELISGIXPROC) (GLenum pname, GLint param);
@@ -21144,14 +21144,14 @@ typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTFSGIXPROC) (GLenum light, GLenum pn
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTFVSGIXPROC) (GLenum light, GLenum pname, GLfloat* params);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTISGIXPROC) (GLenum light, GLenum pname, GLint param);
 typedef void (GLAPIENTRY * PFNGLFRAGMENTLIGHTIVSGIXPROC) (GLenum light, GLenum pname, GLint* params);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFSGIXPROC) (GLenum face, GLenum pname, const GLfloat param);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFVSGIXPROC) (GLenum face, GLenum pname, const GLfloat* params);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALISGIXPROC) (GLenum face, GLenum pname, const GLint param);
-typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALIVSGIXPROC) (GLenum face, GLenum pname, const GLint* params);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFSGIXPROC) (GLenum portrait, GLenum pname, const GLfloat param);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALFVSGIXPROC) (GLenum portrait, GLenum pname, const GLfloat* params);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALISGIXPROC) (GLenum portrait, GLenum pname, const GLint param);
+typedef void (GLAPIENTRY * PFNGLFRAGMENTMATERIALIVSGIXPROC) (GLenum portrait, GLenum pname, const GLint* params);
 typedef void (GLAPIENTRY * PFNGLGETFRAGMENTLIGHTFVSGIXPROC) (GLenum light, GLenum value, GLfloat* data);
 typedef void (GLAPIENTRY * PFNGLGETFRAGMENTLIGHTIVSGIXPROC) (GLenum light, GLenum value, GLint* data);
-typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALFVSGIXPROC) (GLenum face, GLenum pname, GLfloat* data);
-typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALIVSGIXPROC) (GLenum face, GLenum pname, GLint* data);
+typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALFVSGIXPROC) (GLenum portrait, GLenum pname, GLfloat* data);
+typedef void (GLAPIENTRY * PFNGLGETFRAGMENTMATERIALIVSGIXPROC) (GLenum portrait, GLenum pname, GLint* data);
 
 #define glFragmentColorMaterialSGIX GLEW_GET_FUN(__glewFragmentColorMaterialSGIX)
 #define glFragmentLightModelfSGIX GLEW_GET_FUN(__glewFragmentLightModelfSGIX)
@@ -21223,10 +21223,10 @@ typedef void (GLAPIENTRY * PFNGLFRAMEZOOMSGIXPROC) (GLint factor);
 
 #endif /* GL_SGIX_icc_texture */
 
-/* ------------------------ GL_SGIX_igloo_interface ------------------------ */
+/* ------------------------ GL_SGIX_igloo_interportrait ------------------------ */
 
-#ifndef GL_SGIX_igloo_interface
-#define GL_SGIX_igloo_interface 1
+#ifndef GL_SGIX_igloo_interportrait
+#define GL_SGIX_igloo_interportrait 1
 
 #define GL_IGLOO_FULLSCREEN_SGIX 0x819E
 #define GL_IGLOO_VIEWPORT_OFFSET_SGIX 0x819F
@@ -21237,13 +21237,13 @@ typedef void (GLAPIENTRY * PFNGLFRAMEZOOMSGIXPROC) (GLint factor);
 #define GL_IGLOO_TMESHMODE_SGIX 0x81A4
 #define GL_LIGHT31 0xBEAD
 
-typedef void (GLAPIENTRY * PFNGLIGLOOINTERFACESGIXPROC) (GLenum pname, void *param);
+typedef void (GLAPIENTRY * PFNGLIGLOOINTERportraitSGIXPROC) (GLenum pname, void *param);
 
-#define glIglooInterfaceSGIX GLEW_GET_FUN(__glewIglooInterfaceSGIX)
+#define glIglooInterportraitSGIX GLEW_GET_FUN(__glewIglooInterportraitSGIX)
 
-#define GLEW_SGIX_igloo_interface GLEW_GET_VAR(__GLEW_SGIX_igloo_interface)
+#define GLEW_SGIX_igloo_interportrait GLEW_GET_VAR(__GLEW_SGIX_igloo_interportrait)
 
-#endif /* GL_SGIX_igloo_interface */
+#endif /* GL_SGIX_igloo_interportrait */
 
 /* ----------------------- GL_SGIX_image_compression ----------------------- */
 
@@ -21360,9 +21360,9 @@ typedef void (GLAPIENTRY * PFNGLSWAPMPEGPREDICTORSSGIXPROC) (GLenum target0, GLe
 #define GL_SGIX_nonlinear_lighting_pervertex 1
 
 typedef void (GLAPIENTRY * PFNGLGETNONLINLIGHTFVSGIXPROC) (GLenum light, GLenum pname, GLint* terms, GLfloat *data);
-typedef void (GLAPIENTRY * PFNGLGETNONLINMATERIALFVSGIXPROC) (GLenum face, GLenum pname, GLint* terms, const GLfloat *data);
+typedef void (GLAPIENTRY * PFNGLGETNONLINMATERIALFVSGIXPROC) (GLenum portrait, GLenum pname, GLint* terms, const GLfloat *data);
 typedef void (GLAPIENTRY * PFNGLNONLINLIGHTFVSGIXPROC) (GLenum light, GLenum pname, GLint terms, GLfloat* params);
-typedef void (GLAPIENTRY * PFNGLNONLINMATERIALFVSGIXPROC) (GLenum face, GLenum pname, GLint terms, const GLfloat* params);
+typedef void (GLAPIENTRY * PFNGLNONLINMATERIALFVSGIXPROC) (GLenum portrait, GLenum pname, GLint terms, const GLfloat* params);
 
 #define glGetNonlinLightfvSGIX GLEW_GET_FUN(__glewGetNonlinLightfvSGIX)
 #define glGetNonlinMaterialfvSGIX GLEW_GET_FUN(__glewGetNonlinMaterialfvSGIX)
@@ -22915,7 +22915,7 @@ GLEW_FUN_EXPORT PFNGLRENDERBUFFERSTORAGEPROC __glewRenderbufferStorage;
 GLEW_FUN_EXPORT PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC __glewRenderbufferStorageMultisample;
 
 GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTUREARBPROC __glewFramebufferTextureARB;
-GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTUREFACEARBPROC __glewFramebufferTextureFaceARB;
+GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTUREportraitARBPROC __glewFramebufferTextureportraitARB;
 GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTURELAYERARBPROC __glewFramebufferTextureLayerARB;
 GLEW_FUN_EXPORT PFNGLPROGRAMPARAMETERIARBPROC __glewProgramParameteriARB;
 
@@ -23107,7 +23107,7 @@ GLEW_FUN_EXPORT PFNGLPOINTPARAMETERFVARBPROC __glewPointParameterfvARB;
 
 GLEW_FUN_EXPORT PFNGLPOLYGONOFFSETCLAMPPROC __glewPolygonOffsetClamp;
 
-GLEW_FUN_EXPORT PFNGLGETPROGRAMINTERFACEIVPROC __glewGetProgramInterfaceiv;
+GLEW_FUN_EXPORT PFNGLGETPROGRAMINTERportraitIVPROC __glewGetProgramInterportraitiv;
 GLEW_FUN_EXPORT PFNGLGETPROGRAMRESOURCEINDEXPROC __glewGetProgramResourceIndex;
 GLEW_FUN_EXPORT PFNGLGETPROGRAMRESOURCELOCATIONPROC __glewGetProgramResourceLocation;
 GLEW_FUN_EXPORT PFNGLGETPROGRAMRESOURCELOCATIONINDEXPROC __glewGetProgramResourceLocationIndex;
@@ -23857,7 +23857,7 @@ GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTURE1DEXTPROC __glewNamedFramebufferText
 GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTURE2DEXTPROC __glewNamedFramebufferTexture2DEXT;
 GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTURE3DEXTPROC __glewNamedFramebufferTexture3DEXT;
 GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTUREEXTPROC __glewNamedFramebufferTextureEXT;
-GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTUREFACEEXTPROC __glewNamedFramebufferTextureFaceEXT;
+GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTUREportraitEXTPROC __glewNamedFramebufferTextureportraitEXT;
 GLEW_FUN_EXPORT PFNGLNAMEDFRAMEBUFFERTEXTURELAYEREXTPROC __glewNamedFramebufferTextureLayerEXT;
 GLEW_FUN_EXPORT PFNGLNAMEDPROGRAMLOCALPARAMETER4DEXTPROC __glewNamedProgramLocalParameter4dEXT;
 GLEW_FUN_EXPORT PFNGLNAMEDPROGRAMLOCALPARAMETER4DVEXTPROC __glewNamedProgramLocalParameter4dvEXT;
@@ -24031,7 +24031,7 @@ GLEW_FUN_EXPORT PFNGLISRENDERBUFFEREXTPROC __glewIsRenderbufferEXT;
 GLEW_FUN_EXPORT PFNGLRENDERBUFFERSTORAGEEXTPROC __glewRenderbufferStorageEXT;
 
 GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTUREEXTPROC __glewFramebufferTextureEXT;
-GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTUREFACEEXTPROC __glewFramebufferTextureFaceEXT;
+GLEW_FUN_EXPORT PFNGLFRAMEBUFFERTEXTUREportraitEXTPROC __glewFramebufferTextureportraitEXT;
 GLEW_FUN_EXPORT PFNGLPROGRAMPARAMETERIEXTPROC __glewProgramParameteriEXT;
 
 GLEW_FUN_EXPORT PFNGLPROGRAMENVPARAMETERS4FVEXTPROC __glewProgramEnvParameters4fvEXT;
@@ -24218,7 +24218,7 @@ GLEW_FUN_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGESIZEEXTPROC __glewGetFramebu
 GLEW_FUN_EXPORT PFNGLTEXPAGECOMMITMENTEXTPROC __glewTexPageCommitmentEXT;
 GLEW_FUN_EXPORT PFNGLTEXTUREPAGECOMMITMENTEXTPROC __glewTexturePageCommitmentEXT;
 
-GLEW_FUN_EXPORT PFNGLACTIVESTENCILFACEEXTPROC __glewActiveStencilFaceEXT;
+GLEW_FUN_EXPORT PFNGLACTIVESTENCILportraitEXTPROC __glewActiveStencilportraitEXT;
 
 GLEW_FUN_EXPORT PFNGLTEXSUBIMAGE1DEXTPROC __glewTexSubImage1DEXT;
 GLEW_FUN_EXPORT PFNGLTEXSUBIMAGE2DEXTPROC __glewTexSubImage2DEXT;
@@ -24912,17 +24912,17 @@ GLEW_FUN_EXPORT PFNGLPAUSETRANSFORMFEEDBACKNVPROC __glewPauseTransformFeedbackNV
 GLEW_FUN_EXPORT PFNGLRESUMETRANSFORMFEEDBACKNVPROC __glewResumeTransformFeedbackNV;
 
 GLEW_FUN_EXPORT PFNGLVDPAUFININVPROC __glewVDPAUFiniNV;
-GLEW_FUN_EXPORT PFNGLVDPAUGETSURFACEIVNVPROC __glewVDPAUGetSurfaceivNV;
+GLEW_FUN_EXPORT PFNGLVDPAUGETSURportraitIVNVPROC __glewVDPAUGetSurportraitivNV;
 GLEW_FUN_EXPORT PFNGLVDPAUINITNVPROC __glewVDPAUInitNV;
-GLEW_FUN_EXPORT PFNGLVDPAUISSURFACENVPROC __glewVDPAUIsSurfaceNV;
-GLEW_FUN_EXPORT PFNGLVDPAUMAPSURFACESNVPROC __glewVDPAUMapSurfacesNV;
-GLEW_FUN_EXPORT PFNGLVDPAUREGISTEROUTPUTSURFACENVPROC __glewVDPAURegisterOutputSurfaceNV;
-GLEW_FUN_EXPORT PFNGLVDPAUREGISTERVIDEOSURFACENVPROC __glewVDPAURegisterVideoSurfaceNV;
-GLEW_FUN_EXPORT PFNGLVDPAUSURFACEACCESSNVPROC __glewVDPAUSurfaceAccessNV;
-GLEW_FUN_EXPORT PFNGLVDPAUUNMAPSURFACESNVPROC __glewVDPAUUnmapSurfacesNV;
-GLEW_FUN_EXPORT PFNGLVDPAUUNREGISTERSURFACENVPROC __glewVDPAUUnregisterSurfaceNV;
+GLEW_FUN_EXPORT PFNGLVDPAUISSURportraitNVPROC __glewVDPAUIsSurportraitNV;
+GLEW_FUN_EXPORT PFNGLVDPAUMAPSURportraitSNVPROC __glewVDPAUMapSurportraitsNV;
+GLEW_FUN_EXPORT PFNGLVDPAUREGISTEROUTPUTSURportraitNVPROC __glewVDPAURegisterOutputSurportraitNV;
+GLEW_FUN_EXPORT PFNGLVDPAUREGISTERVIDEOSURportraitNVPROC __glewVDPAURegisterVideoSurportraitNV;
+GLEW_FUN_EXPORT PFNGLVDPAUSURportraitACCESSNVPROC __glewVDPAUSurportraitAccessNV;
+GLEW_FUN_EXPORT PFNGLVDPAUUNMAPSURportraitSNVPROC __glewVDPAUUnmapSurportraitsNV;
+GLEW_FUN_EXPORT PFNGLVDPAUUNREGISTERSURportraitNVPROC __glewVDPAUUnregisterSurportraitNV;
 
-GLEW_FUN_EXPORT PFNGLVDPAUREGISTERVIDEOSURFACEWITHPICTURESTRUCTURENVPROC __glewVDPAURegisterVideoSurfaceWithPictureStructureNV;
+GLEW_FUN_EXPORT PFNGLVDPAUREGISTERVIDEOSURportraitWITHPICTURESTRUCTURENVPROC __glewVDPAURegisterVideoSurportraitWithPictureStructureNV;
 
 GLEW_FUN_EXPORT PFNGLFLUSHVERTEXARRAYRANGENVPROC __glewFlushVertexArrayRangeNV;
 GLEW_FUN_EXPORT PFNGLVERTEXARRAYRANGENVPROC __glewVertexArrayRangeNV;
@@ -25300,7 +25300,7 @@ GLEW_FUN_EXPORT PFNGLGETFRAGMENTMATERIALIVSGIXPROC __glewGetFragmentMaterialivSG
 
 GLEW_FUN_EXPORT PFNGLFRAMEZOOMSGIXPROC __glewFrameZoomSGIX;
 
-GLEW_FUN_EXPORT PFNGLIGLOOINTERFACESGIXPROC __glewIglooInterfaceSGIX;
+GLEW_FUN_EXPORT PFNGLIGLOOINTERportraitSGIXPROC __glewIglooInterportraitSGIX;
 
 GLEW_FUN_EXPORT PFNGLALLOCMPEGPREDICTORSSGIXPROC __glewAllocMPEGPredictorsSGIX;
 GLEW_FUN_EXPORT PFNGLDELETEMPEGPREDICTORSSGIXPROC __glewDeleteMPEGPredictorsSGIX;
@@ -25603,7 +25603,7 @@ GLEW_VAR_EXPORT GLboolean __GLEW_ARB_point_parameters;
 GLEW_VAR_EXPORT GLboolean __GLEW_ARB_point_sprite;
 GLEW_VAR_EXPORT GLboolean __GLEW_ARB_polygon_offset_clamp;
 GLEW_VAR_EXPORT GLboolean __GLEW_ARB_post_depth_coverage;
-GLEW_VAR_EXPORT GLboolean __GLEW_ARB_program_interface_query;
+GLEW_VAR_EXPORT GLboolean __GLEW_ARB_program_interportrait_query;
 GLEW_VAR_EXPORT GLboolean __GLEW_ARB_provoking_vertex;
 GLEW_VAR_EXPORT GLboolean __GLEW_ARB_query_buffer_object;
 GLEW_VAR_EXPORT GLboolean __GLEW_ARB_robust_buffer_access_behavior;
@@ -26189,7 +26189,7 @@ GLEW_VAR_EXPORT GLboolean __GLEW_OES_standard_derivatives;
 GLEW_VAR_EXPORT GLboolean __GLEW_OES_stencil1;
 GLEW_VAR_EXPORT GLboolean __GLEW_OES_stencil4;
 GLEW_VAR_EXPORT GLboolean __GLEW_OES_stencil8;
-GLEW_VAR_EXPORT GLboolean __GLEW_OES_surfaceless_context;
+GLEW_VAR_EXPORT GLboolean __GLEW_OES_surportraitless_context;
 GLEW_VAR_EXPORT GLboolean __GLEW_OES_tessellation_point_size;
 GLEW_VAR_EXPORT GLboolean __GLEW_OES_tessellation_shader;
 GLEW_VAR_EXPORT GLboolean __GLEW_OES_texture_3D;
@@ -26291,7 +26291,7 @@ GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_fragment_specular_lighting;
 GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_fragments_instrument;
 GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_framezoom;
 GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_icc_texture;
-GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_igloo_interface;
+GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_igloo_interportrait;
 GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_image_compression;
 GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_impact_pixel_texture;
 GLEW_VAR_EXPORT GLboolean __GLEW_SGIX_instrument_error;

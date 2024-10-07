@@ -5,6 +5,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Assignment2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\Assignment2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\ComplexGraphicObject2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\ComplexGraphicObject2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\PortraitWheel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\PortraitWheel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Portrait.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\Portrait.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Portrait.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\Portrait.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\ComplexGraphicObject2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\ComplexGraphicObject2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\GraphicObject2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\GraphicObject2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\PortraitWheel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{10AECDD4-7C63-46CA-0558-40A1710C3DCE}|Assignment2\\Assignment2.vcxproj|solutionrelative:Assignment2\\PortraitWheel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +42,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ComplexGraphicObject2D.cpp",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\ComplexGraphicObject2D.cpp",
+              "RelativeDocumentMoniker": "Assignment2\\ComplexGraphicObject2D.cpp",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\ComplexGraphicObject2D.cpp",
+              "RelativeToolTip": "Assignment2\\ComplexGraphicObject2D.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-07T16:24:25.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ComplexGraphicObject2D.h",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\ComplexGraphicObject2D.h",
+              "RelativeDocumentMoniker": "Assignment2\\ComplexGraphicObject2D.h",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\ComplexGraphicObject2D.h",
+              "RelativeToolTip": "Assignment2\\ComplexGraphicObject2D.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-07T16:23:02.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Portrait.cpp",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Portrait.cpp",
+              "RelativeDocumentMoniker": "Assignment2\\Portrait.cpp",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Portrait.cpp",
+              "RelativeToolTip": "Assignment2\\Portrait.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-07T16:00:09.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Portrait.h",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Portrait.h",
+              "RelativeDocumentMoniker": "Assignment2\\Portrait.h",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Portrait.h",
+              "RelativeToolTip": "Assignment2\\Portrait.h",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-07T16:06:25.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GraphicObject2D.h",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\GraphicObject2D.h",
+              "RelativeDocumentMoniker": "Assignment2\\GraphicObject2D.h",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\GraphicObject2D.h",
+              "RelativeToolTip": "Assignment2\\GraphicObject2D.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-07T16:00:19.228Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +117,35 @@
               "RelativeDocumentMoniker": "Assignment2\\Assignment2.cpp",
               "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\Assignment2.cpp",
               "RelativeToolTip": "Assignment2\\Assignment2.cpp",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwEIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-07T15:49:16.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PortraitWheel.cpp",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\PortraitWheel.cpp",
+              "RelativeDocumentMoniker": "Assignment2\\PortraitWheel.cpp",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\PortraitWheel.cpp",
+              "RelativeToolTip": "Assignment2\\PortraitWheel.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwDIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-07T16:36:22.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PortraitWheel.h",
+              "DocumentMoniker": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\PortraitWheel.h",
+              "RelativeDocumentMoniker": "Assignment2\\PortraitWheel.h",
+              "ToolTip": "C:\\Users\\slowe\\OneDrive\\Desktop\\csc406_assignment2\\Assignment2\\PortraitWheel.h",
+              "RelativeToolTip": "Assignment2\\PortraitWheel.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-07T16:35:46.453Z",
               "EditorCaption": ""
             }
           ]

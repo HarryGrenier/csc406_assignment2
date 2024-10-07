@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Assignment2.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Portrait.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexGraphicObject2D.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="PortraitWheel.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphicObject2D.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="glPlatform.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Portrait.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexGraphicObject2D.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PortraitWheel.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{33b11234-3d01-4b9c-bb2b-89de6bf1147f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{ccaf2ce5-7d5f-4243-afc4-68e96e794040}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,3 +1,6 @@
+#ifndef GRAPHICOBJECT2D_H
+#define GRAPHICOBJECT2D_H
+
 class GraphicObject2D {
 private:
     float positionX_, positionY_;
@@ -26,3 +29,5 @@ public:
     // Pure virtual draw method to be overridden
     virtual void draw() const = 0;
 };
+
+#endif // GRAPHICOBJECT2D_H

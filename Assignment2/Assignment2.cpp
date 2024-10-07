@@ -12,7 +12,8 @@
 #include <memory>
 //
 #include "glPlatform.h"
-#include "face.h"
+#include "portrait.h"
+#include "PortraitWheel.h"
 
 using namespace std;
 
@@ -34,8 +35,8 @@ Y_MAX = 10.0f, Y_MIN = -10.0f;
 int winWidth = 600,
 winHeight = 600;
 
-// vector of shared pointers to manage face instances
-vector<shared_ptr<face> > faceList;
+// vector of shared pointers to manage portrait instances
+vector<shared_ptr<portrait> > portraitList;
 
 void myDisplay(void)
 {
@@ -48,11 +49,13 @@ void myDisplay(void)
 	//	This says that we start from the lower-left corner of the screen
 	glLoadIdentity();
 
-	// itterates for every element in the face list vector calling
-	// ever instance of the face class created
-	for (auto face : faceList)
-		face->draw();
+	// itterates for every element in the portrait list vector calling
+	// ever instance of the portrait class created
+	for (auto portrait : portraitList)
+		portrait->draw();
+	PortraitWheel myWheel(WheelType::HEADS_ON_WHEEL, WheelSize::LARGE, 5, 0, 0);
 
+	myWheel.draw();
 
 	// switches the drawing on the back buffer to the front screen
 	glutSwapBuffers();
@@ -109,7 +112,7 @@ int main(int argc, char** argv)
 	glutInitWindowSize(winWidth, winHeight);
 	glutInitWindowPosition(INIT_WIN_X, INIT_WIN_Y);
 	// adds a title to the window
-	glutCreateWindow("Harry Grenier Assignment 1v1 with scaling");
+	glutCreateWindow("Harry Grenier Assignment 2");
 
 	//	set up the callbacks
 	glutDisplayFunc(myDisplay);
@@ -118,14 +121,14 @@ int main(int argc, char** argv)
 
 	myInit();
 
-	//pushs differnt face sizes and locations that we want displayed to the 
-	// facelist vector creating a new instance of the face class each time
-	faceList.push_back(make_shared<face>(-7.0f, 1.0f, 0.7f,45.f));
-	//facelist.push_back(make_shared<face>(6.0f, 6.0f, 3.0f));
-	//facelist.push_back(make_shared<face>(-8.0f, 8.0f, 1.0f));
-	//facelist.push_back(make_shared<face>(-8.0f, 0.0f, 0.75f));
-	//facelist.push_back(make_shared<face>(8.0f, -8.0f, 2.5f));
-	//facelist.push_back(make_shared<face>(0.0f, 0.0f, 3.5f));
+	//pushs differnt portrait sizes and locations that we want displayed to the 
+	// portraitlist vector creating a new instance of the portrait class each time
+	portraitList.push_back(make_shared<portrait>(-7.0f, 1.0f, 0.7f,45.f));
+	//portraitlist.push_back(make_shared<portrait>(6.0f, 6.0f, 3.0f));
+	//portraitlist.push_back(make_shared<portrait>(-8.0f, 8.0f, 1.0f));
+	//portraitlist.push_back(make_shared<portrait>(-8.0f, 0.0f, 0.75f));
+	//portraitlist.push_back(make_shared<portrait>(8.0f, -8.0f, 2.5f));
+	//portraitlist.push_back(make_shared<portrait>(0.0f, 0.0f, 3.5f));
 
 
 	glutMainLoop();

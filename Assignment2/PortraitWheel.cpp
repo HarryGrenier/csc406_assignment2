@@ -1,47 +1,54 @@
 #include "PortraitWheel.h"
+#include "portrait.h" // Ensure this is the correct header with the lowercase class name
+#include <cmath>
 
-// Constructor for PortraitWheel
 PortraitWheel::PortraitWheel(WheelType type, WheelSize size, int num, float x, float y)
-    : type_(type), size_(size), numHeads_(num) {
-    setPosition(x, y); // Set the position of the PortraitWheel
-    createHeads(); // Create the face objects distributed along the circle
+    : wheelType(type), wheelSize(size), numPortraits(num) {
+    // Set the origin of the wheel
+    setPosition(x, y);
+
+    // Initialize the portraits based on the type, size, and number of heads
+    initializePortraits(type, size, num, x, y);
 }
 
-// Destructor to clean up dynamically allocated memory
-PortraitWheel::~PortraitWheel() {
-    for (face* head : heads_) {
-        delete head;
-    }
-}
+void PortraitWheel::initializePortraits(WheelType type, WheelSize size, int num, float x, float y) {
+    float scale = getScaleFromSize(size);
+    float baseRadius = 4.0f; // Adjust this value to control the base size of the circle
 
-void PortraitWheel::draw() const {
-    for (const face* head : heads_) {
-        head->draw();  // Call the draw method for each face object
-    }
-}
+    // Increase the radius according to the size of the wheel
+    float radius = baseRadius * scale;
 
-// Method to create and position the face objects
-void PortraitWheel::createHeads() {
-    float scaleFactor;
-    switch (size_) {
-    case WheelSize::LARGE: scaleFactor = 1.5f; break;
-    case WheelSize::MEDIUM: scaleFactor = 1.0f; break;
-    case WheelSize::SMALL: scaleFactor = 0.5f; break;
-    }
+    float angleIncrement = 360.0f / num;
 
-    float angleIncrement = 2 * 3.1415926f / numHeads_; // Calculate the angle between each head
-    for (int i = 0; i < numHeads_; ++i) {
+    for (int i = 0; i < num; ++i) {
         float angle = i * angleIncrement;
-        float headX = getPositionX() + cos(angle) * scaleFactor; // Calculate X position
-        float headY = getPositionY() + sin(angle) * scaleFactor; // Calculate Y position
+        float radian = angle * (3.1415926f / 180.0f);
+        float portraitX = x + cos(radian) * radius;
+        float portraitY = y + sin(radian) * radius;
 
-        // Create a new face object with the calculated position and scale
-        face* newFace = new face(headX, headY, scaleFactor);
-        heads_.push_back(newFace);
+        // Create a new portrait object and store it in the vector
+        std::shared_ptr<portrait> portraitObject = std::make_shared<portrait>(portraitX, portraitY, scale, angle);
+        portraitObject->setPosition(portraitX, portraitY);
 
-        // Adjust the orientation of the face based on the WheelType
-        if (type_ == WheelType::HEADS_ON_STICKS) {
-            newFace->setOrientation(angle * (180.0f / 3.1415926f)); // Orient to point toward the center
+        // Adjust the orientation based on the wheel type
+        if (type == WheelType::HEADS_ON_STICKS) {
+            portraitObject->setOrientation(angle - 90.0f); // Rotate to face the center
         }
+        else if (type == WheelType::HEADS_ON_WHEEL) {
+            portraitObject->setOrientation(0); // All faces point upright
+        }
+
+        // Add the portrait to the vector and to the ComplexGraphicObject2D parts list
+        portraits.push_back(portraitObject);
+        addPart(portraitObject);
+    }
+}
+
+float PortraitWheel::getScaleFromSize(WheelSize size) {
+    switch (size) {
+    case WheelSize::LARGE: return 1.5f; // Larger scale
+    case WheelSize::MEDIUM: return 1.0f; // Medium scale
+    case WheelSize::SMALL: return 0.5f; // Smaller scale
+    default: return 1.0f; // Default to small if unknown
     }
 }

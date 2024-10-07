@@ -1,10 +1,10 @@
 #ifndef PORTRAITWHEEL_H
 #define PORTRAITWHEEL_H
 
-#include "GraphicObject2D.h"
-#include "Face.h"  // Assuming Face class is defined in Face.h
+#include "ComplexGraphicObject2D.h"
+#include "portrait.h" // Correct header file for the lowercase portrait class
 #include <vector>
-#include <cmath>
+#include <memory>
 
 enum class WheelType {
     HEADS_ON_STICKS,
@@ -17,21 +17,19 @@ enum class WheelSize {
     SMALL
 };
 
-class PortraitWheel : public GraphicObject2D {
+class PortraitWheel : public ComplexGraphicObject2D {
 public:
     PortraitWheel(WheelType type, WheelSize size, int num, float x, float y);
-    ~PortraitWheel(); // Destructor to manage memory
-
-    // Implement the draw method as required by the base class
-    void draw() const override;
 
 private:
-    WheelType type_;
-    WheelSize size_;
-    int numHeads_;
-    std::vector<face*> heads_; // Vector to store the head pointers
+    void initializePortraits(WheelType type, WheelSize size, int num, float x, float y);
+    float getScaleFromSize(WheelSize size);
 
-    void createHeads(); // Function to create the heads
+    WheelType wheelType;
+    WheelSize wheelSize;
+    int numPortraits;
+
+    std::vector<std::shared_ptr<portrait>> portraits; // Vector to store portraits
 };
 
 #endif // PORTRAITWHEEL_H

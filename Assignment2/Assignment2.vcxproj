@@ -11,13 +11,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="face.cpp" />
+    <ClCompile Include="ComplexGraphicObject2D.cpp" />
+    <ClCompile Include="Portrait.cpp" />
     <ClCompile Include="Assignment2.cpp" />
+    <ClCompile Include="PortraitWheel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="face.h" />
+    <ClInclude Include="ComplexGraphicObject2D.h" />
+    <ClInclude Include="Portrait.h" />
     <ClInclude Include="glPlatform.h" />
     <ClInclude Include="GraphicObject2D.h" />
+    <ClInclude Include="PortraitWheel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{10AECDD4-7C63-46CA-0558-40A1710C3DCE}</ProjectGuid>
