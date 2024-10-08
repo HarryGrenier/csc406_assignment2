@@ -1,4 +1,4 @@
 ExtraStuff/
-bin-init/
+bin-int/
 bin/
-Assignment2/vendor/
+Assignment2/*.vcxproj
