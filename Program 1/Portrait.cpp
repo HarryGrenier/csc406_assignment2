@@ -127,15 +127,15 @@ void portrait::drawPupils() const {
 void portrait::drawHat() const {
     // Hat brim: A wide, flat ellipse slightly larger than the portrait
     float brimWidth = size_ * 1.2f;  // Hat brim is 120% of portrait width
-    float brimHeight = size_ * 0.05f;  // Hat brim is 10% of portrait height
+    float brimHeight = size_ * 0.05f;  // Hat brim is 5% of portrait height
     float brimOffsetY = size_ * 0.7f;  // The brim sits just above the portrait
 
     // Draw the brim of the hat as an ellipse
     drawEllipse(0.0f, brimOffsetY, brimWidth, brimHeight, 100, 0.3f, 0.2f, 0.1f);  // Dark color for the brim
 
     // Hat body: A tall rectangle above the brim
-    float hatWidth = size_ * 1.3f;  // Hat body is 150% of portrait width
-    float hatHeight = size_ * 1.6f;  // Hat body height is smaller than portrait height
+    float hatWidth = size_ * 1.3f;  // Hat body is 130% of portrait width
+    float hatHeight = size_ * 1.6f; // set the portraits hat height
     float hatOffsetY = brimOffsetY + (brimHeight - 0.05);  // Position the hat body above the brim
 
     // Draw the body of the hat as a rectangle
@@ -151,30 +151,30 @@ void portrait::drawHat() const {
 
 // Setter and getter methods
 void portrait::setPosition(float x, float y) {
-    GraphicObject2D::setPosition(x, y);  // Call parent class method
+    GraphicObject2D::setPosition(x, y);  
 }
 
 void portrait::setOrientation(float angle) {
-    GraphicObject2D::setOrientation(angle);  // Call parent class method
+    GraphicObject2D::setOrientation(angle);  
 }
 
 void portrait::setScale(float scale) {
-    GraphicObject2D::setScale(scale);  // Call parent class method
+    GraphicObject2D::setScale(scale);  
 }
 
 float portrait::getPositionX() const {
-    return GraphicObject2D::getPositionX();  // Get position from parent class
+    return GraphicObject2D::getPositionX();  
 }
 
 float portrait::getPositionY() const {
-    return GraphicObject2D::getPositionY();  // Get position from parent class
+    return GraphicObject2D::getPositionY();  
 }
 
 float portrait::getOrientation() const {
-    return GraphicObject2D::getOrientation();  // Get orientation from parent class
+    return GraphicObject2D::getOrientation();  
 }
 
 float portrait::getScale() const {
-    return GraphicObject2D::getScale();  // Get scale from parent class
+    return GraphicObject2D::getScale(); 
 }
 

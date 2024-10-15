@@ -1,9 +1,10 @@
 #include "PortraitWheel.h"
-#include "portrait.h" // Ensure this is the correct header with the lowercase class name
+#include "portrait.h"
 #include <cmath>
 
+// constructor for the portraitwheel class
 PortraitWheel::PortraitWheel(WheelType type, WheelSize size, int num, float x, float y)
-    : wheelType(type), wheelSize(size), numPortraits(num) {
+    : ComplexGraphicObject2D(), wheelType(type), wheelSize(size), numPortraits(num) {
     // Set the origin of the wheel
     setPosition(x, y);
 
@@ -12,21 +13,21 @@ PortraitWheel::PortraitWheel(WheelType type, WheelSize size, int num, float x, f
 }
 
 void PortraitWheel::initializePortraits(WheelType type, WheelSize size, int num, float x, float y) {
-    float scale = getScaleFromSize(size);
-    float baseRadius = 4.0f; // Adjust this value to control the base size of the circle
+    float scale = getScaleFromSize(size); // calls wheelsize enum to get the floating point size of the scale
+    float baseRadius = 4.0f; // sets the base size of the wheel so its not the same size as the portraits
 
     // Increase the radius according to the size of the wheel
-    float radius = baseRadius * scale;
+    float radius = baseRadius * scale; // calculates the radius of the wheel
+    float angleIncrement = 360.0f / num; // for the whole circle divide it up acording to the number of heads needed
 
-    float angleIncrement = 360.0f / num;
-
+    // caculate the position for each of the portraits
     for (int i = 0; i < num; ++i) {
         float angle = i * angleIncrement;
         float radian = angle * (3.1415926f / 180.0f);
         float portraitX = x + cos(radian) * radius;
         float portraitY = y + sin(radian) * radius;
 
-        // Create a new portrait object and store it in the vector
+        // Create a new portrait object and add it directly to the ComplexGraphicObject2D parts list
         std::shared_ptr<portrait> portraitObject = std::make_shared<portrait>(portraitX, portraitY, scale, angle);
         portraitObject->setPosition(portraitX, portraitY);
 
@@ -38,8 +39,7 @@ void PortraitWheel::initializePortraits(WheelType type, WheelSize size, int num,
             portraitObject->setOrientation(0); // All faces point upright
         }
 
-        // Add the portrait to the vector and to the ComplexGraphicObject2D parts list
-        portraits.push_back(portraitObject);
+        // Add the portrait to the ComplexGraphicObject2D's parts list
         addPart(portraitObject);
     }
 }
@@ -49,6 +49,7 @@ float PortraitWheel::getScaleFromSize(WheelSize size) {
     case WheelSize::LARGE: return 1.5f; // Larger scale
     case WheelSize::MEDIUM: return 1.0f; // Medium scale
     case WheelSize::SMALL: return 0.5f; // Smaller scale
-    default: return 1.0f; // Default to small if unknown
+    default: return 1.0f; // Default to medium if unknown
     }
 }
+
